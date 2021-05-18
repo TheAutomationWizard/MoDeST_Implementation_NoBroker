@@ -1,0 +1,22 @@
+target 
+# allure-results
+# allure-reports
+test-output
+
+## By file extensions ##
+.classpath
+.settings
+.project
+
+
+## File extensions ##
+*.xml
+*.html
+*.png
+*.jpg
+*.class
+
+
+## Specific files ##
+!testng.xml
+!pom.xml

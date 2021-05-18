@@ -1,0 +1,11 @@
+[ {
+  "uid" : "7b4c2e28a6ae01b0",
+  "name" : "NoBrokerTestCase",
+  "time" : {
+    "start" : 1598996892053,
+    "stop" : 1598997129037,
+    "duration" : 236984
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

@@ -1,0 +1,26 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "name" : "timeline",
+  "children" : [ {
+    "name" : "G7XG6ZY2E",
+    "children" : [ {
+      "name" : "4764@G7XG6ZY2E.main(1)",
+      "children" : [ {
+        "name" : "NoBrokerTestCase",
+        "uid" : "7b4c2e28a6ae01b0",
+        "parentUid" : "37da3f18587ad5d5dfac8e0bda078a64",
+        "status" : "passed",
+        "time" : {
+          "start" : 1598996892053,
+          "stop" : 1598997129037,
+          "duration" : 236984
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ "1237567899", "nobroker123", "Bangalore", "HSR Layout,Marathahalli", "bhktwo,bhkthree", "4", "Location,Fake Photos,BHK Type,Availability Date,Price,Other", "What is the correct configuration?", "4+ BHK" ]
+      } ],
+      "uid" : "37da3f18587ad5d5dfac8e0bda078a64"
+    } ],
+    "uid" : "1834fb4ef5ffa6f7adbaa0714b85370c"
+  } ]
+}

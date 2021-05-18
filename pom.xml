@@ -1,0 +1,140 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+
+<!-- =================================================   			PROJECT DETAILS 	       ================================================= -->
+  <groupId>org.adityaautomationtechniques.com</groupId>
+  <artifactId>nobroker-assignment</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+  <name>nobroker-assignment</name>
+  <url>http://maven.apache.org</url>
+
+
+<!-- =================================================   			PROJECT PROPERITES 	       ================================================= -->
+<properties>
+    		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+            <aspectj.version>1.9.1</aspectj.version>
+            <java.version>1.8</java.version>
+				<maven.compiler.source>${java.version}</maven.compiler.source>
+				<maven.compiler.target>${java.version}</maven.compiler.target>
+				<alluremaven.version>2.9</alluremaven.version>
+</properties>
+
+<!-- =================================================   PROJECT DEPENDENCIES (JARS/ ../ETC )  ================================================= -->
+										<!-- =========       https://search.maven.org/         ========= -->
+<dependencies>
+
+		<!-- TestNG -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.3</version>
+			<scope>compile</scope>
+		</dependency>
+		<!-- Selenium -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<!-- Appium -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>7.0.0</version>
+		</dependency>
+		<!-- Allure-TestNG -->
+		<dependency>
+    		<groupId>io.qameta.allure</groupId>
+     		<artifactId>allure-testng</artifactId>
+     		<version>2.12.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>io.qameta.allure</groupId>
+			<artifactId>allure-maven</artifactId>
+			<version>2.8</version>
+		</dependency>
+		<!-- Excel Exception & Readers -->
+		<dependency>
+			<groupId>jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.xml/serializer -->
+		<dependency>
+	    	<groupId>org.eclipse.birt.runtime.3_7_1</groupId>
+			<artifactId>org.apache.xml.serializer</artifactId>
+			<version>2.7.1</version>
+		</dependency>
+
+</dependencies>
+
+
+
+
+
+
+	<reporting>
+			<excludeDefaults>true</excludeDefaults>
+			<plugins>
+				<plugin>
+					<groupId>io.qameta.allure</groupId>
+					<artifactId>allure-maven</artifactId>
+					<version>2.9</version>
+				</plugin>
+				<plugin>
+            <groupId>ru.yandex.qatools.allure</groupId>
+            <artifactId>allure-maven-plugin</artifactId>
+            <version>${alluremaven.version}</version>
+        </plugin>
+			</plugins>
+	</reporting>
+
+
+<!-- =================================================   		 BUILD SECTION	    	 ================================================= -->
+	
+   <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+    			<artifactId>maven-compiler-plugin</artifactId>
+    			<version>3.8.0</version>
+    			
+    			<configuration>
+        		<!-- 	<release>11</release> -->
+        		<release>${java.version}</release>
+    			</configuration>
+            </plugin>
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.22.0</version>
+                <configuration>
+                 	<argLine>
+            			--illegal-access=permit
+        			</argLine>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <argLine>
+                        -javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
+                    </argLine>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjweaver</artifactId>
+                        <version>${aspectj.version}</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+        </plugins>
+    </build>
+
+  
+
+</project>
